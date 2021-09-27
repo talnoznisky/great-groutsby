@@ -168,10 +168,16 @@
                 sort = sort.split('_')[0]
                 lines.forEach(line => {
                     newArr.push(line[`${sort}`])
+
                 })
-                newArr.sort(function (a, b) {
-                    return a.toLowerCase().localeCompare(b.toLowerCase());
-                });
+                if (sort.includes('alpha')){
+                    newArr.sort(function (a, b) {
+                        return a.toLowerCase().localeCompare(b.toLowerCase());
+                    });
+                }
+                
+                newArr.reverse()
+                
             } else{
                 lines.forEach(line=> {
                     newArr.push(line[`${sort}`])
