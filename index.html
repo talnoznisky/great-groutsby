@@ -11,38 +11,78 @@
         <meta name="theme-color" content="#ffffff">
         <title></title>
         <style>
-            #seealso{
-                font-size: x-small;
-            }
-            body {
-                margin-left: 1em;
-            }
-            img {
-                max-width: 60%;
-            }
-            p {
-                max-width: 60%;
-            }
 
-            @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-                body {
-                    margin: 1em;
-                    font-size: 18px;
-                }
-                p {
-                    max-width: 100%;
-                }
-                img {
-                    max-width: 100%;
-                }
-            }
+        .dropbtn {
+            background-color: transparent;
+            border: transparent; 
+            font-size: large;
+        }
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+            top:0;
+            right: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid black;
+            min-width: 160px;
+            z-index: 1;
+            right:0;
+        }
+
+        .dropdown-content a {
+            color:blue;
+            background-color: white;
+            padding: 1em;
+            display: block;
+        }
+        .show {display:block;}
+
+        body {
+            margin-left: 1em;
+        }
+        img {
+            max-width: 60%;
+        }
+        p {
+            max-width: 60%;
+        }
+        hr {
+            margin: 0;
+        }
+        @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        body {
+            margin: 1em;
+            font-size: 18px;
+                            }
+                            p {
+                                max-width: 100%;
+                            }
+                            img {
+                                max-width: 100%;
+                            }
+                        }
     </style>
     </head>
     
     <body>
+        
         <h2 id='title'></h2>
         <p>F. Scott Fitzgerald</p>
-        <p id='seealso'>See also: </p>
+        <div><p id='seealso'>See also: </p></div>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">ℹ️</button>
+            <div id="myDropdown" class="dropdown-content">
+                <a id="oppositeLink"></a>
+                <hr>
+                <a id="repo"></a>
+        
+            </div>
+          </div>
         <div id='banner'><img src='ascii-eyes.png'></div>
         
         <div class="dedication">
@@ -67,6 +107,27 @@
 
     </body>
     <script>
+
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
         // set H2/title
         function setTitle(){
             title = document.getElementsByTagName('title')[0]
@@ -80,11 +141,19 @@
         // set link
         function setLink(){
             seealso = document.getElementById('seealso')
-            link = document.createElement('a')
-            linkAddress = document.location.href.includes('greatgroutsby') ? 'thegroutgatsby.com' : 'thegreatgroutsby.com'
-            link.href = `https://${linkAddress}`
-            link.innerText = linkAddress
-            seealso.append(link)
+            
+            oppositeLink = document.getElementById('oppositeLink')
+            oppositeLinkAddress = document.location.href.includes('greatgroutsby') ? 'thegroutgatsby.com' : 'thegreatgroutsby.com'
+            oppositeLinkAddress = `https://${oppositeLinkAddress}`
+            oppositeLink.href = oppositeLinkAddress
+            oppositeLink.innerText = oppositeLinkAddress
+            
+            repoLink = document.getElementById('repo')
+            repoName = document.location.href.includes('greatgroutsby') ? 'great-groutsby' : 'grout-gatsby'
+            repoLinkAddress = `https://github.com/talnoznisky/${repoName}`
+            repoLink.href = repoLinkAddress
+            repoLink.innerText = repoLinkAddress
+
         }
 
         function createParagraph(line){
