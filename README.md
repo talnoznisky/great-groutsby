@@ -17,7 +17,7 @@
 
 2. To provide a quasi-ecommerce interface to meritorious literary products like FSG's overwrought sentences. 
 
-3. To extend the discussion of literary structure and literary content by through newly interactive reading and publishing tools.
+3. To extend the discussion of literary structure and literary content by through new interactive reading and publishing tools.
 
 4. Other reasons I won't go into here. Please email me if you wanna chat about it.
 
