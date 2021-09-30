@@ -21,11 +21,16 @@
 
 4. Other reasons I won't go into here. Please email me if you wanna chat about it.
 
-## To whom I am indebted
+## Some considerations
+-  A complete "sentence" is a difficult concept to enforce programmatically, especially in a literary context. Mercifully, The Great Gatsby is grammatically and syntactically conventional.
+- Reading a re-sorted draft of The Great Gatsby kind of feels like an Alain Resnais script.
+- Simple web design/UX patterns, not just natural language processing tools, are fun models for literary production. And free!
+
+## Thank yous
 - [Alex Cabal](https://github.com/acabal) for their stellar reproduction of [The Great Gatsby](https://www.gutenberg.org/files/64317/64317-h/64317-h.htm) into HTML for Project Gutenberg.
-- My colleague [Jay Kaiser](https://github.com/jayckaiser) for steering me toward the most appropriate NLP tools for the job.
+- [Jay Kaiser](https://github.com/jayckaiser), my colleague, for alerting me to the [spacy](https://spacy.io/) NLP package and talking me through the current state of the art.
 - [BramVanoy](https://github.com/BramVanroy) for sharing their solution to similar sentence boundary detection challenges. I created a pipeline component out of the function you wrote. Thank you so much.
 - Whoever graffitied "the great groutsby" among other grout puns in the grouting in the mens room of the music building at University of Washington.
 
 ## P.S.
-Neither the processing nor web presentation looks great right now. Please don't look too closely. Refactoring to come.
+Neither the processing nor web presentation code looks great right now. Please avert your eyes. Refactoring to come.
